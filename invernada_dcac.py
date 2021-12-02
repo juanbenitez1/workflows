@@ -115,7 +115,7 @@ cantidadnu1
 time.sleep(3)
 driver.quit()
 
-gc = pygsheets.authorize(service_file='C:/Users/Acer Nitro 5/Documents/Fundacion/Ganadera/creds.json')
+gc = pygsheets.authorize(service_file='creds.json')
 df = pd.DataFrame()
 sh = gc.open('invernada-datosdecampoacampo')
 
