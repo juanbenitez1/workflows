@@ -178,3 +178,149 @@ maiz.columns = ['Denominacion','Precio']
 
 driver.find_element_by_xpath('/html/body/div[6]/div/div[2]/div/div/div[1]/div[2]/div[1]/div[1]/button[2]').click()
 time.sleep(5)
+
+
+denom1 = driver.find_elements_by_xpath("//td[@data-label='Categoria']")
+time.sleep(2)
+datadenom1 = []
+for dato in denom1:
+    datadenom1.append(dato.text)
+
+dfdenom1 = pd.DataFrame(datadenom1)
+dfdenom1.columns=['Denominacion']
+dfdenom1 
+
+datprecxtn11 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/div/div[2]/table/tbody/tr[1]/td[2]")
+datprecxtn21 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/div/div[2]/table/tbody/tr[2]/td[2]")
+datprecxtn31 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/div/div[2]/table/tbody/tr[3]/td[2]")
+datprecxtn41 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/div/div[2]/table/tbody/tr[4]/td[2]")
+datprecxtn51 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/div/div[2]/table/tbody/tr[5]/td[2]")
+datprecxtn61 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/div/div[2]/table/tbody/tr[6]/td[2]")
+datprecxtn71 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/div/div[2]/table/tbody/tr[7]/td[2]")
+datprecxtn81 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/div/div[2]/table/tbody/tr[8]/td[2]")
+datprecxtn91 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/div/div[2]/table/tbody/tr[9]/td[2]")
+
+time.sleep(4)
+
+datpxt11 = []
+for dato in datprecxtn11:
+    datpxt11.append(dato.text)
+datpxt11
+
+datpxt21 = []
+for dato in datprecxtn21:
+    datpxt21.append(dato.text)
+
+datpxt31 = []
+for dato in datprecxtn31:
+    datpxt31.append(dato.text)
+
+datpxt41 = []
+for dato in datprecxtn41:
+    datpxt41.append(dato.text)
+    
+datpxt51 = []
+for dato in datprecxtn51:
+    datpxt51.append(dato.text)
+    
+datpxt61 = []
+for dato in datprecxtn61:
+    datpxt61.append(dato.text)
+    
+datpxt71 = []
+for dato in datprecxtn71:
+    datpxt71.append(dato.text)
+    
+datpxt81 = []
+for dato in datprecxtn81:
+    datpxt81.append(dato.text)
+    
+datpxt91 = []
+for dato in datprecxtn91:
+    datpxt91.append(dato.text)
+
+dats1 = datpxt11,datpxt21,datpxt31,datpxt41,datpxt51,datpxt61,datpxt71,datpxt81,datpxt91
+dats1
+
+dfprecioxtn1 = pd.DataFrame(dats1)
+dfprecioxtn1
+
+soja = dfdenom1.merge(dfprecioxtn1,right_index=True,left_index=True)
+soja.columns = ['Denominacion','Precio']
+soja
+
+driver.find_element_by_xpath('/html/body/div[6]/div/div[2]/div/div/div[1]/div[2]/div[1]/div[1]/button[3]').click()
+time.sleep(5)
+
+denom11 = driver.find_elements_by_xpath("//td[@data-label='Categoria']")
+time.sleep(2)
+datadenom11 = []
+for dato in denom11:
+    datadenom11.append(dato.text)
+
+dfdenom11 = pd.DataFrame(datadenom11)
+dfdenom11.columns=['Denominacion']
+dfdenom11 
+
+datprecxtn111 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/div/div[2]/table/tbody/tr[1]/td[2]")
+datprecxtn211 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/div/div[2]/table/tbody/tr[2]/td[2]")
+datprecxtn311 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/div/div[2]/table/tbody/tr[3]/td[2]")
+datprecxtn411 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/div/div[2]/table/tbody/tr[4]/td[2]")
+datprecxtn511 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/div/div[2]/table/tbody/tr[5]/td[2]")
+datprecxtn611 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/div/div[2]/table/tbody/tr[6]/td[2]")
+datprecxtn711 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/div/div[2]/table/tbody/tr[7]/td[2]")
+datprecxtn811 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/div/div[2]/table/tbody/tr[8]/td[2]")
+datprecxtn911 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/div/div[2]/table/tbody/tr[9]/td[2]")
+
+time.sleep(4)
+
+datpxt111 = []
+for dato in datprecxtn111:
+    datpxt111.append(dato.text)
+datpxt111
+
+datpxt211 = []
+for dato in datprecxtn211:
+    datpxt211.append(dato.text)
+
+datpxt311 = []
+for dato in datprecxtn311:
+    datpxt311.append(dato.text)
+
+datpxt411 = []
+for dato in datprecxtn411:
+    datpxt411.append(dato.text)
+    
+datpxt511 = []
+for dato in datprecxtn511:
+    datpxt511.append(dato.text)
+    
+datpxt611 = []
+for dato in datprecxtn611:
+    datpxt611.append(dato.text)
+    
+datpxt711 = []
+for dato in datprecxtn711:
+    datpxt711.append(dato.text)
+    
+datpxt811 = []
+for dato in datprecxtn811:
+    datpxt811.append(dato.text)
+    
+datpxt911 = []
+for dato in datprecxtn911:
+    datpxt911.append(dato.text)
+
+dats11 = datpxt111,datpxt211,datpxt311,datpxt411,datpxt511,datpxt611,datpxt711,datpxt811,datpxt911
+dats11
+
+dfprecioxtn11 = pd.DataFrame(dats11)
+dfprecioxtn11
+
+trigo = dfdenom11.merge(dfprecioxtn11,right_index=True,left_index=True)
+trigo.columns = ['Denominacion','Precio']
+trigo
+
+granos = pd.concat([maiz,soja,trigo])
+granos
+
