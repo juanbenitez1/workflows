@@ -5,7 +5,7 @@ on:
   push:
     branches: [ main ]
   schedule:
-    - cron: '51 17 * * *'
+    - cron: '54 17 * * *'
 jobs:
   scraper:
     runs-on: ubuntu-latest
