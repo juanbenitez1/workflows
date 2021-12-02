@@ -43,4 +43,7 @@ datadenom = []
 for dato in denom:
     datadenom.append(dato.text)
 
-datadenom
+dfdenom = pd.DataFrame(datadenom)
+dfdenom.columns=['Denominacion']
+dfdenom 
+
