@@ -117,7 +117,7 @@ driver.quit()
 
 gc = pygsheets.authorize(service_file='creds.json')
 df = pd.DataFrame()
-sh = gc.open('invernada-datosdecampoacampo')
+sh = gc.open('Invernada-CampoaCampo')
 
 wks = sh[0]
 cells = wks.get_all_values(include_tailing_empty_rows=False, include_tailing_empty=False)
