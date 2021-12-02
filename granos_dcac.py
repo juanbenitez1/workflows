@@ -265,14 +265,14 @@ time.sleep(0.5)
 driver.quit()
 
 gc = pygsheets.authorize(service_file='creds.json')
-df = pd.DataFrame()
+datagranos = pd.DataFrame()
 sh = gc.open('CampoaCampo')
 
 wks = sh[2]
 cells = wks.get_all_values(include_tailing_empty_rows=False, include_tailing_empty=False)
 num = len(cells)
 
-granos1 = pd.concat([df,granos])
+granos1 = pd.concat([datagranos,granos])
 granos1
 
 probando = granos1.values.tolist()
