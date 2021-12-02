@@ -3,7 +3,6 @@ numpy
 pandas
 selenium
 openpyxl
-time
 datetime
 gspread
 df2gspread
