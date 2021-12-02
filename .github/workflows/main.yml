@@ -23,7 +23,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          python invernada_dcac.py
+          python faena_dcac.py
           python granos_dcac.py
-          # python invernada_dcac.py
-          # python faena_dcac.py
                     
