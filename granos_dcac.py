@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.options import Options
 from openpyxl import load_workbook
 import time
 import datetime
@@ -7,13 +8,20 @@ from datetime import datetime, timedelta
 import pandas as pd
 from selenium.webdriver.support.ui import Select
 import numpy as np
+import pandas as pd
+import gspread
+import df2gspread as d2g
+import pygsheets
 
-driver = webdriver.Chrome(executable_path=r"E:/Omar/FRONTERA/proyecto python/WebScraping/ChromeDriver/chromedriver.exe")
+options = Options()
+options.add_argument("--headless")
+
+driver = webdriver.Chrome(options=options)
 driver.get("https://www.decampoacampo.com/__dcac/")
 time.sleep(3)
 
-mail = 'omarszampaca@gmail.com'
-contraseña = '15_Chapu'
+mail = 'jpbenitez1997@gmail.com'
+contraseña = 'Juan40044678'
 
 driver.find_element_by_id("btn_login").click()
 time.sleep(0.25)
@@ -256,15 +264,17 @@ granos
 time.sleep(0.5)
 driver.quit()
 
-arch2 = pd.read_excel('E:\Omar\FRONTERA\proyecto python\WebScraping\granos-datosdecampoacampo.xlsx')
-arch2['Precio'] = arch2['Precio'].squeeze()
-arch2['Precio'] = arch2['Precio'].map(lambda x: str(x).replace(',','.')).astype(float)
-arch2
+gc = pygsheets.authorize(service_file='C:/Users/Acer Nitro 5/Documents/Fundacion/Ganadera/creds.json')
+df = pd.DataFrame()
+sh = gc.open('invernada-datosdecampoacampo')
 
-granos1 = pd.concat([arch2,granos])
+wks = sh[2]
+cells = wks.get_all_values(include_tailing_empty_rows=False, include_tailing_empty=False)
+num = len(cells)
+
+granos1 = pd.concat([df,granos])
+granos1['Precio'] = granos1['Precio'].map(lambda x: str(x).replace(',','.')).astype(float)
 granos1
 
-
-granos1.to_excel('granos-datosdecampoacampo.xlsx',sheet_name='Granos',index=False)
-
-
+probando = granos1.values.tolist()
+wks.insert_rows(num, values=probando, inherit=True)
