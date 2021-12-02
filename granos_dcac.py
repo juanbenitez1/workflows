@@ -244,8 +244,3 @@ dats1
 
 dfprecioxtn1 = pd.DataFrame(dats1)
 dfprecioxtn1
-
-soja = dfdenom1.merge(dfprecioxtn1,right_index=True,left_index=True)
-soja.columns = ['Denominacion','Precio']
-soja
-
