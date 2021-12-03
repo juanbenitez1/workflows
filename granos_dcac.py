@@ -59,3 +59,8 @@ datprecxtn9 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/di
 
 time.sleep(4)
 
+datpxt1 = []
+for dato in datprecxtn1:
+    datpxt1.append(dato.text)
+datpxt1
+
