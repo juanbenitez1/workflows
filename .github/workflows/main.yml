@@ -5,7 +5,7 @@ on:
   # push:
   #  branches: [ main ]
   schedule:
-    - cron: '15 15 * * *'
+    - cron: '00 16 * * *'
 jobs:
   scraper:
     runs-on: windows-latest
