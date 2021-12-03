@@ -5,10 +5,10 @@ on:
   # push:
   #  branches: [ main ]
   schedule:
-    - cron: '30 14 * * *'
+    - cron: '50 14 * * *'
 jobs:
   scraper:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
 
       - name: checkout repo content
