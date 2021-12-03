@@ -45,7 +45,6 @@ for dato in denom:
 
 dfdenom = pd.DataFrame(datadenom)
 dfdenom.columns=['Denominacion']
-dfdenom 
 
 datprecxtn1 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/div/div[2]/table/tbody/tr[1]/td[2]")
 datprecxtn2 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/div/div[2]/table/tbody/tr[2]/td[2]")
@@ -96,10 +95,8 @@ for dato in datprecxtn9:
     datpxt9.append(dato.text)
 
 dats = datpxt1,datpxt2,datpxt3,datpxt4,datpxt5,datpxt6,datpxt7,datpxt8,datpxt9
-dats
 
 dfprecioxtn = pd.DataFrame(dats)
-dfprecioxtn
 
 maiz = dfdenom.merge(dfprecioxtn,right_index=True,left_index=True)
 maiz.columns = ['Denominacion','Precio']
@@ -115,7 +112,6 @@ for dato in denom1:
 
 dfdenom1 = pd.DataFrame(datadenom1)
 dfdenom1.columns=['Denominacion']
-dfdenom1 
 
 datprecxtn11 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/div/div[2]/table/tbody/tr[1]/td[2]")
 datprecxtn21 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/div/div[2]/table/tbody/tr[2]/td[2]")
@@ -132,7 +128,6 @@ time.sleep(4)
 datpxt11 = []
 for dato in datprecxtn11:
     datpxt11.append(dato.text)
-datpxt11
 
 datpxt21 = []
 for dato in datprecxtn21:
@@ -167,27 +162,24 @@ for dato in datprecxtn91:
     datpxt91.append(dato.text)
 
 dats1 = datpxt11,datpxt21,datpxt31,datpxt41,datpxt51,datpxt61,datpxt71,datpxt81,datpxt91
-dats1
 
 dfprecioxtn1 = pd.DataFrame(dats1)
-dfprecioxtn1
 
 soja = dfdenom1.merge(dfprecioxtn1,right_index=True,left_index=True)
 soja.columns = ['Denominacion','Precio']
-soja
 
 driver.find_element_by_xpath('/html/body/div[6]/div/div[2]/div/div/div[1]/div[2]/div[1]/div[1]/button[3]').click()
 time.sleep(5)
 
 denom11 = driver.find_elements_by_xpath("//td[@data-label='Categoria']")
 time.sleep(2)
+
 datadenom11 = []
 for dato in denom11:
     datadenom11.append(dato.text)
 
 dfdenom11 = pd.DataFrame(datadenom11)
 dfdenom11.columns=['Denominacion']
-dfdenom11 
 
 datprecxtn111 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/div/div[2]/table/tbody/tr[1]/td[2]")
 datprecxtn211 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/div/div[2]/table/tbody/tr[2]/td[2]")
@@ -204,7 +196,6 @@ time.sleep(4)
 datpxt111 = []
 for dato in datprecxtn111:
     datpxt111.append(dato.text)
-datpxt111
 
 datpxt211 = []
 for dato in datprecxtn211:
@@ -239,17 +230,13 @@ for dato in datprecxtn911:
     datpxt911.append(dato.text)
 
 dats11 = datpxt111,datpxt211,datpxt311,datpxt411,datpxt511,datpxt611,datpxt711,datpxt811,datpxt911
-dats11
 
 dfprecioxtn11 = pd.DataFrame(dats11)
-dfprecioxtn11
 
 trigo = dfdenom11.merge(dfprecioxtn11,right_index=True,left_index=True)
 trigo.columns = ['Denominacion','Precio']
-trigo
 
 granos = pd.concat([maiz,soja,trigo])
-granos
 
 fecha = datetime.today()
 fecha = str(fecha.strftime('%d/%m/%Y'))
@@ -258,7 +245,6 @@ granos['Fecha'] = fecha
 granos = granos.reindex(columns=['Fecha','Denominacion','Precio'])
 granos['Precio'] = granos['Precio'].squeeze()
 granos['Precio'] = granos['Precio'].map(lambda x: str(x).replace(',','.')).astype(float)
-granos
 
 time.sleep(0.5)
 driver.quit()
