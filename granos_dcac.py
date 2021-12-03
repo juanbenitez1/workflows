@@ -35,7 +35,7 @@ time.sleep(5)
 driver.find_element_by_xpath('/html/body/div[7]/div/div/div[2]').click()
 time.sleep(1)
 driver.find_element_by_xpath('/html/body/div[7]/div/div/div[2]/span/a[3]/span/span').click()
-time.sleep(3)
+time.sleep(30)
 
 denom = driver.find_elements_by_xpath("//td[@data-label='Categoria']")
 time.sleep(20)
