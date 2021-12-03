@@ -108,13 +108,4 @@ maiz.columns = ['Denominacion','Precio']
 driver.find_element_by_xpath('/html/body/div[6]/div/div[2]/div/div/div[1]/div[2]/div[1]/div[1]/button[2]').click()
 time.sleep(5)
 
-denom1 = driver.find_elements_by_xpath("//td[@data-label='Categoria']")
-time.sleep(2)
-datadenom1 = []
-for dato in denom1:
-    datadenom1.append(dato.text)
-
-dfdenom1 = pd.DataFrame(datadenom1)
-dfdenom1.columns=['Denominacion']
-dfdenom1 
 
