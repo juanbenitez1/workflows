@@ -57,12 +57,11 @@ datprecxtn7 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/di
 datprecxtn8 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/div/div[2]/table/tbody/tr[8]/td[2]")
 datprecxtn9 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/div/div[2]/table/tbody/tr[9]/td[2]")
 
-time.sleep(60)
+time.sleep(4)
 
 datpxt1 = []
 for dato in datprecxtn1:
     datpxt1.append(dato.text)
-datpxt1
 
 datpxt2 = []
 for dato in datprecxtn2:
