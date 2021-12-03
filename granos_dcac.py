@@ -102,10 +102,4 @@ dats
 dfprecioxtn = pd.DataFrame(dats)
 dfprecioxtn
 
-maiz = dfdenom.merge(dfprecioxtn,right_index=True,left_index=True)
-maiz.columns = ['Denominacion','Precio']
-
-driver.find_element_by_xpath('/html/body/div[6]/div/div[2]/div/div/div[1]/div[2]/div[1]/div[1]/button[2]').click()
-time.sleep(5)
-
 
