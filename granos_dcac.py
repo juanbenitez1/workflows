@@ -44,7 +44,6 @@ for dato in denom:
     datadenom.append(dato.text)
 
 dfdenom = pd.DataFrame(datadenom)
-# dfdenom.columns=['Denominacion']
 
 datprecxtn1 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/div/div[2]/table/tbody/tr[1]/td[2]")
 datprecxtn2 = driver.find_elements_by_xpath("/html/body/div[6]/div/div[2]/div/div/div[2]/table/tbody/tr[2]/td[2]")
