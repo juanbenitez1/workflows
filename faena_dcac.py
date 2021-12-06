@@ -102,7 +102,6 @@ datosss = datosss.rename(columns={'Precio_nuevo':'Precio_prom_sem','Cantidad_nue
 datosss
 
 datosss['Precio_prom_sem'] = datosss['Precio_prom_sem'].squeeze()
-#datosss['Precio_prom_sem'] = datosss['Precio_prom_sem'].map(lambda x: str(x).replace(',','.')).astype(float)
 datosss['Cantidad_acum_sem'] = datosss['Cantidad_acum_sem'].astype(float)
 datosss
 
