@@ -91,7 +91,6 @@ num = len(cells)
 
 datosss = dfclas2.merge(precionuevo2,right_index=True,left_index=True)
 datosss = datosss.merge(cantidadnu2,right_index=True,left_index=True)
-datosss
 
 fecha_nueva = datetime.today()
 fecha_nueva = str(fecha_nueva.strftime('%d/%m/%Y'))
@@ -99,11 +98,8 @@ fecha_nueva = str(fecha_nueva.strftime('%d/%m/%Y'))
 datosss['Fecha'] = fecha_nueva
 datosss = datosss.reindex(columns=['Fecha','Clase','Precio_nuevo','Cantidad_nueva'])
 datosss = datosss.rename(columns={'Precio_nuevo':'Precio_prom_sem','Cantidad_nueva':'Cantidad_acum_sem'})
-datosss
 
 datosss['Precio_prom_sem'] = datosss['Precio_prom_sem'].squeeze()
-datosss['Cantidad_acum_sem'] = datosss['Cantidad_acum_sem'].astype(float)
-datosss
 
 datoss2 = pd.concat([df,datosss])
 datoss2
