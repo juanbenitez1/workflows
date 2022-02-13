@@ -86,11 +86,11 @@ granos = granos[granos['descripcion'].str.contains('FAS') == False]
 time.sleep(0.5)
 driver.quit()
 
-gc = pygsheets.authorize(service_file='C:/Users/Acer Nitro 5/Documents/Fundacion/Ganadera/creds.json')
+gc = pygsheets.authorize(service_file='creds.json')
 df = pd.DataFrame()
 sh = gc.open('CampoaCampo')
 
-wks = sh[5]
+wks = sh[4]
 cells = wks.get_all_values(include_tailing_empty_rows=False, include_tailing_empty=False)
 num = len(cells)
 
