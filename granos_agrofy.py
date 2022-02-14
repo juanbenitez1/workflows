@@ -71,7 +71,7 @@ trigo = pd.DataFrame(data=t)
 trigo["tipo_cambio"] = dolar
 trigo["fecha"] = trigo_fecha
 trigo["tipo_cambio"] = trigo["tipo_cambio"].astype(float)
-trigo["pesosxtn"] = trigo["pesosxtn"].astype(float)
+trigo["pesosxtn"] = trigo["pesosxtn"]
 trigo['usdxtn'] = trigo["pesosxtn"]/trigo["tipo_cambio"]
 trigo["fecha"] = pd.to_datetime(trigo["fecha"])
 trigo["fecha"] = trigo["fecha"].dt.strftime('%m/%d/%Y')
