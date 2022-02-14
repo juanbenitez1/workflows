@@ -44,7 +44,7 @@ soja["tipo_cambio"] = soja["tipo_cambio"].astype(float)
 soja["pesosxtn"] = soja["pesosxtn"].astype(float)
 soja['usdxtn'] = soja["pesosxtn"]/soja["tipo_cambio"]
 soja["fecha"] = pd.to_datetime(soja["fecha"])
-soja["fecha"] = soja["fecha"].dt.strftime('%m/%d/%Y')
+soja["fecha"] = soja["fecha"].dt.strftime('%d/%m/%Y')
 soja = soja.reindex(columns=['fecha','descripcion','pesosxtn','usdxtn'])
 soja
 
@@ -59,7 +59,7 @@ maiz["tipo_cambio"] = maiz["tipo_cambio"].astype(float)
 maiz["pesosxtn"] = maiz["pesosxtn"].astype(float)
 maiz['usdxtn'] = maiz["pesosxtn"]/maiz["tipo_cambio"]
 maiz["fecha"] = pd.to_datetime(maiz["fecha"])
-maiz["fecha"] = maiz["fecha"].dt.strftime('%m/%d/%Y')
+maiz["fecha"] = maiz["fecha"].dt.strftime('%d/%m/%Y')
 maiz = maiz.reindex(columns=['fecha','descripcion','pesosxtn','usdxtn'])
 maiz
 
@@ -78,7 +78,7 @@ else:
     trigo["pesosxtn"] = 'N/D'
     trigo['usdxtn'] = 'N/D'
 trigo["fecha"] = pd.to_datetime(trigo["fecha"])
-trigo["fecha"] = trigo["fecha"].dt.strftime('%m/%d/%Y')
+trigo["fecha"] = trigo["fecha"].dt.strftime('%d/%m/%Y')
 trigo = trigo.reindex(columns=['fecha','descripcion','pesosxtn','usdxtn'])
 trigo
 
