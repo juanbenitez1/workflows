@@ -71,7 +71,7 @@ trigo = pd.DataFrame(data=t)
 trigo["tipo_cambio"] = dolar
 trigo["fecha"] = trigo_fecha
 trigo["tipo_cambio"] = trigo["tipo_cambio"].astype(float)
-if trigo["pesosxtn"] != 'S/C':
+if trigo["pesosxtn"][0] != 'S/C':
     trigo["pesosxtn"] = trigo["pesosxtn"].astype(float)
     trigo['usdxtn'] = trigo["pesosxtn"]/trigo["tipo_cambio"]
 else:
