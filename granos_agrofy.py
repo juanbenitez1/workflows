@@ -75,7 +75,8 @@ if isinstance(trigo["pesosxtn"][0], int) == True:
     trigo["pesosxtn"] = trigo["pesosxtn"].astype(float)
     trigo['usdxtn'] = trigo["pesosxtn"]/trigo["tipo_cambio"]
 else:
-    pass
+    trigo["pesosxtn"] = 'N/D'
+    trigo['usdxtn'] = 'N/D'
 trigo["fecha"] = pd.to_datetime(trigo["fecha"])
 trigo["fecha"] = trigo["fecha"].dt.strftime('%m/%d/%Y')
 trigo = trigo.reindex(columns=['fecha','descripcion','pesosxtn','usdxtn'])
