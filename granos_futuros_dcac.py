@@ -16,7 +16,7 @@ import pygsheets
 options = Options()
 options.add_argument("--headless")
 
-driver = webdriver.Chrome(options=options)
+driver = webdriver.Chrome(executable_path=r'chromedriver.exe', options=options)
 driver.get("https://www.decampoacampo.com/__dcac/")
 time.sleep(3)
 
@@ -24,11 +24,11 @@ mail = 'jpbenitez1997@gmail.com'
 contraseña = 'Juan40044678'
 
 driver.find_element_by_id("btn_login").click()
-time.sleep(0.25)
+time.sleep(2)
 driver.find_element_by_id("maillog").send_keys(mail)
-time.sleep(0.25)
+time.sleep(2)
 driver.find_element_by_id("password").send_keys(contraseña)
-time.sleep(0.25)
+time.sleep(2)
 driver.find_element_by_id("ingresar_login").click()
 time.sleep(5)
 
