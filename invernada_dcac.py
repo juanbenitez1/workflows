@@ -26,15 +26,15 @@ contraseña = 'Juan40044678'
 
 
 driver.find_element_by_id("btn_login").click()
-time.sleep(0.25)
+time.sleep(2)
 driver.find_element_by_id("maillog").send_keys(mail)
-time.sleep(0.25)
+time.sleep(2)
 driver.find_element_by_id("password").send_keys(contraseña)
-time.sleep(0.25)
+time.sleep(2)
 driver.find_element_by_id("ingresar_login").click()
 time.sleep(3)
 driver.find_element_by_link_text('Ver más').click()
-time.sleep(0.25)
+time.sleep(2)
 datclase = driver.find_elements_by_xpath("//td[@class='td_precios categoria_precios']")
 time.sleep(2)
 dataclas = []
