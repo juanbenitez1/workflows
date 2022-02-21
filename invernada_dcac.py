@@ -17,7 +17,7 @@ import pygsheets
 options = Options()
 options.add_argument("--headless")
 
-driver = webdriver.Chrome(options=options)
+driver = webdriver.Chrome(executable_path=r'chromedriver.exe', options=options)
 driver.get("https://www.decampoacampo.com/__dcac/")
 time.sleep(3)
 
