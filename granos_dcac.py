@@ -109,19 +109,22 @@ if dmu[0] != 'ND':
     m = {'descripcion':desc_m,'pesosxtn':prec_m_pes,'usdxtn':prec_m_usd}
     maiz = pd.DataFrame(data=m)
 else:
-    pass
+    m = {'descripcion':'ND','pesosxtn':'ND','usdxtn':'ND'}
+    maiz = pd.DataFrame(data=m)
 
 if dsu[0] != 'ND':
     s = {'descripcion':desc_s,'pesosxtn':prec_s_pes,'usdxtn':prec_s_usd}
     soja = pd.DataFrame(data=s)
 else:
-    pass
+    s = {'descripcion':'ND','pesosxtn':'ND','usdxtn':'ND'}
+    soja = pd.DataFrame(data=s)
 
 if dtu[0] != 'ND':
     t = {'descripcion':desc_t,'pesosxtn':prec_t_pes,'usdxtn':prec_t_usd}
     trigo = pd.DataFrame(data=t)
 else:
-    pass
+    t = {'descripcion':'ND','pesosxtn':'ND','usdxtn':'ND'}
+    trigo = pd.DataFrame(data=t)
 
 granos = pd.concat([maiz,soja,trigo])
 granos
