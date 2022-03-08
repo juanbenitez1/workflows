@@ -43,15 +43,15 @@ dmu = []
 for d in data_maiz_usd:
     try:
         dmu.append(d.text)
-    desc_m = [dmu[0],dmu[4]]
-    prec_m_usd = [dmu[1],dmu[5]]
-    time.sleep(2)
-    driver.find_element_by_xpath('//*[@id="vue-app"]/div/div[2]/div[1]/div[2]/span/button[1]').click()
-    data_maiz_pes = driver.find_elements_by_tag_name('td')
-    dmp = []
-    for d in data_maiz_pes:
-        dmp.append(d.text)
-    prec_m_pes = [dmp[1],dmp[5]]
+        desc_m = [dmu[0],dmu[4]]
+        prec_m_usd = [dmu[1],dmu[5]]
+        time.sleep(2)
+        driver.find_element_by_xpath('//*[@id="vue-app"]/div/div[2]/div[1]/div[2]/span/button[1]').click()
+        data_maiz_pes = driver.find_elements_by_tag_name('td')
+        dmp = []
+        for d in data_maiz_pes:
+            dmp.append(d.text)
+        prec_m_pes = [dmp[1],dmp[5]]
     except:
         dmu.append('ND')
 
@@ -68,15 +68,15 @@ dsu = []
 for d in data_soja_usd:
     try:
         dsu.append(d.text)
-    desc_s = [dsu[0],dsu[4]]
-    prec_s_usd = [dsu[1],dsu[5]]
-    time.sleep(5)
-    driver.find_element_by_xpath('/html/body/div[6]/div[1]/div[2]/div/div[1]/div/div[2]/div[1]/div[2]/span/button[1]').click()
-    data_soja_pes = driver.find_elements_by_tag_name('td')
-    dsp = []
-    for d in data_soja_pes:
-        dsp.append(d.text)
-    prec_s_pes = [dsp[1],dsp[5]]
+        desc_s = [dsu[0],dsu[4]]
+        prec_s_usd = [dsu[1],dsu[5]]
+        time.sleep(5)
+        driver.find_element_by_xpath('/html/body/div[6]/div[1]/div[2]/div/div[1]/div/div[2]/div[1]/div[2]/span/button[1]').click()
+        data_soja_pes = driver.find_elements_by_tag_name('td')
+        dsp = []
+        for d in data_soja_pes:
+            dsp.append(d.text)
+        prec_s_pes = [dsp[1],dsp[5]]
     except:
         dsu.append('ND')
         
@@ -93,15 +93,15 @@ dtu = []
 for d in data_trigo_usd:
     try:
         dtu.append(d.text)
-    desc_t = [dtu[0],dtu[8]]
-    prec_t_usd = [dtu[1],dtu[9]]
-    time.sleep(5)
-    driver.find_element_by_xpath('/html/body/div[6]/div[1]/div[2]/div/div[1]/div/div[2]/div[1]/div[2]/span/button[1]').click()
-    data_trigo_pes = driver.find_elements_by_tag_name('td')
-    dtp = []
-    for d in data_trigo_pes:
-        dtp.append(d.text)
-    prec_t_pes = [dtp[1],dtp[9]]
+        desc_t = [dtu[0],dtu[8]]
+        prec_t_usd = [dtu[1],dtu[9]]
+        time.sleep(5)
+        driver.find_element_by_xpath('/html/body/div[6]/div[1]/div[2]/div/div[1]/div/div[2]/div[1]/div[2]/span/button[1]').click()
+        data_trigo_pes = driver.find_elements_by_tag_name('td')
+        dtp = []
+        for d in data_trigo_pes:
+            dtp.append(d.text)
+        prec_t_pes = [dtp[1],dtp[9]]
     except:
         dtu.append('ND')
 
