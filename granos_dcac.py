@@ -88,7 +88,7 @@ driver.find_element_by_xpath("/html/body/div[6]/div[1]/div[2]/div/div[1]/div/div
 time.sleep(5)
 
 data_trigo_usd = driver.find_elements_by_tag_name('td')
-time.sleep52)
+time.sleep(5)
 dtu = []
 for d in data_trigo_usd:
     try:
