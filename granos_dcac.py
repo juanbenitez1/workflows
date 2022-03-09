@@ -13,7 +13,6 @@ import gspread
 import df2gspread as d2g
 import pygsheets
 
-
 options = Options()
 options.add_argument("--headless")
 
