@@ -168,7 +168,7 @@ for j in granos_pesos_lista:
         j = j.replace(',','.')
         try:
             j = float(j)
-        except
+        except:
             pass
     else:
         j = 'N/D'
