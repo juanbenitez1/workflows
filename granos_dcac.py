@@ -151,7 +151,7 @@ for j in granos_pesos_lista:
 granos['pesosxtn'] = granos_pesos_lista
 
 for i in granos_usd_lista:
-    for j un granos_pesos_lista:
+    for j in granos_pesos_lista:
         if i != 'N/D' & j != 'N/D':
             tc = j/i
         else:
