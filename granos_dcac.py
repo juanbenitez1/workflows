@@ -118,12 +118,16 @@ fecha = str(fecha.strftime('%d/%m/%Y'))
 granos['Fecha'] = fecha
 granos = granos.reindex(columns=['Fecha','descripcion','pesosxtn','usdxtn'])
 granos['usdxtn'] = granos['usdxtn'].squeeze()
-granos['usdxtn'] = granos['usdxtn'].map(lambda x: str(x).replace(',','.')).astype(float)
-
 granos['pesosxtn'] = granos['pesosxtn'].squeeze()
-granos['pesosxtn'] = granos['pesosxtn'].map(lambda x: str(x).replace('.','')).astype(float)
-
-granos['tipo_cambio'] = granos['pesosxtn']/granos['usdxtn']
+if granos['usdxtn'] != 'S/C':
+    granos['usdxtn'] = granos['usdxtn'].map(lambda x: str(x).replace(',','.')).astype(float)
+    granos['pesosxtn'] = granos['pesosxtn'].map(lambda x: str(x).replace('.','')).astype(float)
+    granos['tipo_cambio'] = granos['pesosxtn']/granos['usdxtn']
+else:
+    granos['usdxtn'] = 'N/D'
+    granos['pesosxtn'] = 'N/D'
+    granos['tipo_cambio'] = 'N/D'
+    
 # granos
 
 time.sleep(5)
