@@ -149,7 +149,7 @@ fecha = str(fecha.strftime('%d/%m/%Y'))
 granos['Fecha'] = fecha
 granos = granos.reindex(columns=['Fecha','descripcion','pesosxtn','usdxtn'])
 granos['usdxtn'] = granos['usdxtn'].squeeze()
-granos['usdxtn'] = granos['usdxtn'].replace('.',',')
+granos['usdxtn'] = granos['usdxtn'].replace(',','.')
 granos_usd_lista = granos['usdxtn'].values.tolist()
 for i in granos_usd_lista:
     if i != 'S/C':
@@ -159,7 +159,7 @@ for i in granos_usd_lista:
 granos['usdxtn'] = granos_usd_lista
     
 granos['pesosxtn'] = granos['pesosxtn'].squeeze()
-granos['pesosxtn'] = granos['pesosxtn'].replace('.',',')
+granos['pesosxtn'] = granos['pesosxtn'].replace(',','.')
 granos_pesos_lista = granos['pesosxtn'].values.tolist()
 for j in granos_pesos_lista:
     if j != 'S/C':
