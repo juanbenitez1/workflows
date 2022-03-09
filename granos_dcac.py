@@ -161,7 +161,7 @@ granos['usdxtn'] = granos_usd_lista
 # granos['pesosxtn'] = granos['pesosxtn'].squeeze()
 granos_pesos_lista = granos['pesosxtn'].values.tolist()
 for j in granos_pesos_lista:
-    if i != 'S/C':
+    if j != 'S/C':
         j = j.replace(',','.')
         j = float(j)
     else:
