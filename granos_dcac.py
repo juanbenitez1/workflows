@@ -165,7 +165,7 @@ granos['pesosxtn'] = granos['pesosxtn'].squeeze()
 granos_pesos_lista = granos['pesosxtn'].values.tolist()
 for j in granos_pesos_lista:
     if j != 'S/C':
-        j = j.replace(','.',')
+        j = j.replace('.',',')
         try:
             j = float(j)
         except:
