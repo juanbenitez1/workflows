@@ -110,7 +110,6 @@ t = {'descripcion':desc_t,'pesosxtn':prec_t_pes,'usdxtn':prec_t_usd}
 trigo = pd.DataFrame(data=t)
 
 granos = pd.concat([maiz,soja,trigo])
-# granos
 
 fecha = datetime.today()
 fecha = str(fecha.strftime('%d/%m/%Y'))
