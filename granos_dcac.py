@@ -129,7 +129,7 @@ granos['pesosxtn'] = granos['pesosxtn'].apply(lambda x: round(x, 0) if type(x) i
 
 try:
     granos['tipo_cambio'] = granos['pesosxtn']/granos['usdxtn']
-    granos['tipo_cambio'] = granos['tipo_cambio'].apply(lambda x: round(x, 1) if type(x) is float else x)
+    granos['tipo_cambio'] = granos['tipo_cambio']
 except:
     granos['tipo_cambio'] = 'N/D'
 
