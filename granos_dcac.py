@@ -121,13 +121,16 @@ granos = granos.reindex(columns=['Fecha','descripcion','pesosxtn','usdxtn'])
 granos['usdxtn'] = granos['usdxtn'].squeeze()
 granos['usdxtn'] = granos['usdxtn'].map(lambda x: str(x).replace(',','.'))
 granos['usdxtn'] = pd.to_numeric(granos['usdxtn'], downcast='float', errors='coerce')
+granos['usdxtn'] = granos['usdxtn'].apply(lambda x: round(x, 1) if type(x) is float else x)
 
 granos['pesosxtn'] = granos['pesosxtn'].squeeze()
 granos['pesosxtn'] = granos['pesosxtn'].map(lambda x: str(x).replace('.',''))
 granos['pesosxtn'] = pd.to_numeric(granos['pesosxtn'], downcast='float', errors='coerce')
+granos['pesosxtn'] = granos['pesosxtn'].apply(lambda x: round(x, 0) if type(x) is float else x)
 
 try:
     granos['tipo_cambio'] = granos['pesosxtn']/granos['usdxtn']
+    granos['tipo_cambio'] = granos['tipo_cambio'].apply(lambda x: round(x, 1) if type(x) is float else x)
 except:
     granos['tipo_cambio'] = 'N/D'
 
