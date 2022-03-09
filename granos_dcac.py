@@ -152,7 +152,7 @@ granos['pesosxtn'] = granos_pesos_lista
 
 for i in granos_usd_lista:
     for j in granos_pesos_lista:
-        if i != 'N/D' & j != 'N/D':
+        if isinstance(i, float) & isinstance(j, float):
             tc = j/i
         else:
             tc = 'N/D'
