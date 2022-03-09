@@ -115,74 +115,21 @@ granos = pd.concat([maiz,soja,trigo])
 fecha = datetime.today()
 fecha = str(fecha.strftime('%d/%m/%Y'))
 
-# granos['Fecha'] = fecha
-# granos = granos.reindex(columns=['Fecha','descripcion','pesosxtn','usdxtn'])
-# granos['usdxtn'] = granos['usdxtn'].squeeze()
-# granos['pesosxtn'] = granos['pesosxtn'].squeeze()
-# if granos['usdxtn'][0] != 'S/C':
-#     granos['usdxtn'] = granos['usdxtn'].map(lambda x: str(x).replace(',','.')).astype(float)
-#     granos['pesosxtn'] = granos['pesosxtn'].map(lambda x: str(x).replace('.','')).astype(float)
-#     granos['tipo_cambio'] = granos['pesosxtn']/granos['usdxtn']
-# else:
-#     granos['usdxtn'] = 'N/D'
-#     granos['pesosxtn'] = 'N/D'
-#     granos['tipo_cambio'] = 'N/D'
-
-# granos['Fecha'] = fecha
-# granos = granos.reindex(columns=['Fecha','descripcion','pesosxtn','usdxtn'])
-
-# granos['usdxtn'] = granos['usdxtn'].squeeze()
-# granos['usdxtn'] = granos['usdxtn'].replace(',','.')
-# granos['usdxtn'] = pd.to_numeric(granos['usdxtn'], errors='coerce')
-# granos['usdxtn'] = granos['usdxtn'].replace(np.nan, 'N/D', regex=True)
-
-# granos['pesosxtn'] = granos['pesosxtn'].squeeze()
-# granos['pesosxtn'] = granos['pesosxtn'].replace('.','')
-# granos['pesosxtn'] = pd.to_numeric(granos['pesosxtn'], errors='coerce')
-# granos['pesosxtn'] = granos['pesosxtn'].replace(np.nan, 'N/D', regex=True)
-
-# try:
-#     granos['tipo_cambio'] = granos['pesosxtn']/granos['usdxtn']
-# except:
-#     granos['tipo_cambio'] = 'N/D'
-
 granos['Fecha'] = fecha
 granos = granos.reindex(columns=['Fecha','descripcion','pesosxtn','usdxtn'])
+
 granos['usdxtn'] = granos['usdxtn'].squeeze()
-granos['usdxtn'] = granos['usdxtn'].map(lambda x: x.replace(',','.'))
-granos_usd_lista = granos['usdxtn'].values.tolist()
-for i in granos_usd_lista:
-    if i != 'S/C':
-        i = float(i)
-    else:
-        i = 'N/D'
-granos['usdxtn'] = granos_usd_lista
-    
+granos['usdxtn'] = granos['usdxtn'].map(lambda x: str(x).replace(',','.'))
+granos['usdxtn'] = pd.to_numeric(granos['usdxtn'], downcast='float', errors='coerce')
+
 granos['pesosxtn'] = granos['pesosxtn'].squeeze()
-granos['pesosxtn'] = granos['pesosxtn'].map(lambda x: x.replace(',','.'))
-granos_pesos_lista = granos['pesosxtn'].values.tolist()
-for j in granos_pesos_lista:
-    if j != 'S/C':
-        j = float(j)
-    else:
-        j = 'N/D'
-granos['pesosxtn'] = granos_pesos_lista
+granos['pesosxtn'] = granos['pesosxtn'].map(lambda x: str(x).replace('.',''))
+granos['pesosxtn'] = pd.to_numeric(granos['pesosxtn'], downcast='float', errors='coerce')
 
 try:
     granos['tipo_cambio'] = granos['pesosxtn']/granos['usdxtn']
 except:
     granos['tipo_cambio'] = 'N/D'
-
-
-# if granos['usdxtn'][0] != 'S/C':
-#     granos['usdxtn'] = granos['usdxtn'].map(lambda x: str(x).replace(',','.')).astype(float)
-#     granos['pesosxtn'] = granos['pesosxtn'].map(lambda x: str(x).replace('.','')).astype(float)
-#     granos['tipo_cambio'] = granos['pesosxtn']/granos['usdxtn']
-# else:
-#     granos['usdxtn'] = 'N/D'
-#     granos['pesosxtn'] = 'N/D'
-#     granos['tipo_cambio'] = 'N/D'    
-# granos
 
 time.sleep(5)
 driver.quit()
