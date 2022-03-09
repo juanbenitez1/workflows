@@ -150,6 +150,14 @@ for j in granos_pesos_lista:
         j = 'N/D'
 granos['pesosxtn'] = granos_pesos_lista
 
+for i in granos_usd_lista:
+    for j un granos_pesos_lista:
+        if i != 'N/D' & j != 'N/D':
+            tc = j/i
+        else:
+            tc = 'N/D'
+granos['tipo_cambio'] = tc
+
 # if granos['usdxtn'][0] != 'S/C':
 #     granos['usdxtn'] = granos['usdxtn'].map(lambda x: str(x).replace(',','.')).astype(float)
 #     granos['pesosxtn'] = granos['pesosxtn'].map(lambda x: str(x).replace('.','')).astype(float)
