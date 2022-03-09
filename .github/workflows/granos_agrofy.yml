@@ -2,8 +2,8 @@ name: scraper-agrofy
 
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-     branches: [ main ]
+#   push:
+#      branches: [ main ]
   schedule:
     - cron: '30 20 * * 1,2,3,4,5'
 jobs:
@@ -28,18 +28,18 @@ jobs:
   scraper:
     runs-on: windows-latest
     steps:
-      - name: send telegram message on push
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ 1798327118 }}
-          token: ${{ 5286545731:AAGV7Jwb9NQPg1i4scq1tX1hc7FzWVWBZSQ }}
-          message: |
-            ${{ github.actor }} created commit:
-            Commit message: ${{ github.event.commits[0].message }}
+#       - name: send telegram message on push
+#         uses: appleboy/telegram-action@master
+#         with:
+#           to: ${{ 1798327118 }}
+#           token: ${{ 5286545731:AAGV7Jwb9NQPg1i4scq1tX1hc7FzWVWBZSQ }}
+#           message: |
+#             ${{ github.actor }} created commit:
+#             Commit message: ${{ github.event.commits[0].message }}
             
-            Repository: ${{ github.repository }}
+#             Repository: ${{ github.repository }}
             
-            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+#             See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
 
       - name: checkout repo content
         uses: actions/checkout@v2 # checkout the repository content to github runner
