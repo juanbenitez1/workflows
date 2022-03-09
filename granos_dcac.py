@@ -115,19 +115,49 @@ granos
 fecha = datetime.today()
 fecha = str(fecha.strftime('%d/%m/%Y'))
 
+# granos['Fecha'] = fecha
+# granos = granos.reindex(columns=['Fecha','descripcion','pesosxtn','usdxtn'])
+# granos['usdxtn'] = granos['usdxtn'].squeeze()
+# granos['pesosxtn'] = granos['pesosxtn'].squeeze()
+# if granos['usdxtn'][0] != 'S/C':
+#     granos['usdxtn'] = granos['usdxtn'].map(lambda x: str(x).replace(',','.')).astype(float)
+#     granos['pesosxtn'] = granos['pesosxtn'].map(lambda x: str(x).replace('.','')).astype(float)
+#     granos['tipo_cambio'] = granos['pesosxtn']/granos['usdxtn']
+# else:
+#     granos['usdxtn'] = 'N/D'
+#     granos['pesosxtn'] = 'N/D'
+#     granos['tipo_cambio'] = 'N/D'
+    
 granos['Fecha'] = fecha
 granos = granos.reindex(columns=['Fecha','descripcion','pesosxtn','usdxtn'])
 granos['usdxtn'] = granos['usdxtn'].squeeze()
-granos['pesosxtn'] = granos['pesosxtn'].squeeze()
-if granos['usdxtn'][0] != 'S/C':
-    granos['usdxtn'] = granos['usdxtn'].map(lambda x: str(x).replace(',','.')).astype(float)
-    granos['pesosxtn'] = granos['pesosxtn'].map(lambda x: str(x).replace('.','')).astype(float)
-    granos['tipo_cambio'] = granos['pesosxtn']/granos['usdxtn']
-else:
-    granos['usdxtn'] = 'N/D'
-    granos['pesosxtn'] = 'N/D'
-    granos['tipo_cambio'] = 'N/D'
+granos_usd_lista = granos['usdxtn'].values.tolist()
+for i in granos_usd_lista:
+    if i != 'S/C':
+        i = i.replace(','.'.')
+        i = float(i)
+    else:
+        i = 'N/D'
+granos['usdxtn'] = granos_usd_lista
     
+granos['pesosxtn'] = granos['pesosxtn'].squeeze()
+granos_pesos_lista = granos['pesosxtn'].values.tolist()
+for j in granos_pesos_lista:
+    if i != 'S/C':
+        j = j.replace(',','.')
+        j = float(j)
+    else:
+        j = 'N/D'
+ granos['pesosxtn'] = granos_pesos_lista
+
+# if granos['usdxtn'][0] != 'S/C':
+#     granos['usdxtn'] = granos['usdxtn'].map(lambda x: str(x).replace(',','.')).astype(float)
+#     granos['pesosxtn'] = granos['pesosxtn'].map(lambda x: str(x).replace('.','')).astype(float)
+#     granos['tipo_cambio'] = granos['pesosxtn']/granos['usdxtn']
+# else:
+#     granos['usdxtn'] = 'N/D'
+#     granos['pesosxtn'] = 'N/D'
+#     granos['tipo_cambio'] = 'N/D'    
 # granos
 
 time.sleep(5)
