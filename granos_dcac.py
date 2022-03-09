@@ -154,7 +154,7 @@ for i in granos_usd_lista:
     if i != 'S/C':
         i = i.replace(',','.')
         try:
-            i = [float(i) if '.' in i]
+            i = float(i)
         except:
             pass
     else:
@@ -167,7 +167,7 @@ for j in granos_pesos_lista:
     if j != 'S/C':
         j = j.replace(',','.')
         try:
-            j = [float(j) if '.' in j]
+            j = float(j)
         except
             pass
     else:
