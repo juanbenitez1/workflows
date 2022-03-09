@@ -148,7 +148,7 @@ for j in granos_pesos_lista:
         j = float(j)
     else:
         j = 'N/D'
- granos['pesosxtn'] = granos_pesos_lista
+granos['pesosxtn'] = granos_pesos_lista
 
 # if granos['usdxtn'][0] != 'S/C':
 #     granos['usdxtn'] = granos['usdxtn'].map(lambda x: str(x).replace(',','.')).astype(float)
